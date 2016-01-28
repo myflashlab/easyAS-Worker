@@ -1,5 +1,5 @@
 # Easy AS Workers
-This AS3 library lets you run AS workers in your AdobeAir projects, desktop, browser, Android and iOS without you having to deal with complicated classic ```import flash.system.Worker;``` class!
+This AS3 library lets you run AS workers in your AdobeAir projects, desktop, browser, Android and iOS without you having to deal with complicated classic ```flash.system.Worker;``` class!
 
 # USAGE
 ```actionscript
