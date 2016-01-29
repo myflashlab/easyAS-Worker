@@ -1,5 +1,5 @@
 # Easy AS Workers for Adobe Air AS3 projects
-This AS3 library lets you run AS workers in your AdobeAir projects, desktop, browser, Android and iOS without you having to deal with complicated classic ```flash.system.Worker;``` class!
+This AS3 library lets you run AS workers in your AdobeAir projects, desktop, browser, Android and iOS without you having to deal with complicated classic ```flash.system.Worker;``` class! [Check here for more setup details](http://www.myflashlabs.com/developer-friendly-as-worker-api/)
 
 # USAGE
 First create your worker class where you need to run your heavy code algurithm. take ```Worker1``` class as an example.
