@@ -1,7 +1,45 @@
-# Easy AS Workers
+# Easy AS Workers for Adobe Air AS3 projects
 This AS3 library lets you run AS workers in your AdobeAir projects, desktop, browser, Android and iOS without you having to deal with complicated classic ```flash.system.Worker;``` class!
 
 # USAGE
+First create your worker class where you need to run your heavy code algurithm. take ```Worker1``` class as an example.
+```actionscript
+package workers
+{
+	import com.myflashlabs.utils.worker.WorkerBase;
+	
+	/**
+	 * ...
+	 * @author MyFlashLab Team - 1/28/2016 11:00 PM
+	 */
+	public class Worker1 extends WorkerBase
+	{
+		
+		public function Worker1()
+		{
+		
+		}
+		
+		// these methods must be public because they are called from the main thread.
+		public function forLoop($myParam:int):void
+		{
+			var thisCommand:Function = arguments.callee;
+			
+			for (var i:int = 0; i < $myParam; i++)
+			{
+				// call this method to send progress to your delegate
+				sendProgress(thisCommand, i);
+			}
+			
+			// call this method as the final message from the worker. When this is called, you cannot send anymore "sendProgress"
+			sendResult(thisCommand, $myParam);
+		}
+	
+	}
+}
+```
+
+Then, in your main project, all you need to do is to initialize ```com.myflashlabs.utils.worker.WorkerManager``` and run your worker whenever you wish.
 ```actionscript
 package
 {
