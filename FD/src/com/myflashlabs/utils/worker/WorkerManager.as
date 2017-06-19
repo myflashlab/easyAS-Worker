@@ -159,7 +159,7 @@ package com.myflashlabs.utils.worker
 			trace("NOTICE: Workers debug mode is on. Build your app in release mode and debug mode will automatically go off.");
 		}
 		
-		protected function getFunctionName(callee:Function):String 
+		public function getFunctionName(callee:Function):String 
 		{
 			var parent:Object = _delegate;
 			for each (var m:XML in describeType(parent)..method)

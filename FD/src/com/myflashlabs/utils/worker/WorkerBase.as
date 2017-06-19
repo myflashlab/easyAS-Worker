@@ -61,20 +61,20 @@ package com.myflashlabs.utils.worker
 			func.apply(null, arr);
 		}
 		
-		protected function sendProgress($method:Function, ...$params):void
+		public function sendProgress($method:Function, ...$params):void
 		{
 			$params.unshift(getFunctionName($method));
 			$params.unshift("type:progress");
 			_outgoingChannel.send($params);
 		}
 		
-		protected function sendResult($method:Function, ...$params):void
+		public function sendResult($method:Function, ...$params):void
 		{
 			$params.unshift(getFunctionName($method));
 			_outgoingChannel.send($params);
 		}
 		
-		protected function getFunctionName(callee:Function):String 
+		public function getFunctionName(callee:Function):String 
 		{
 			var parent:Object = this;
 			for each (var m:XML in describeType(parent)..method)
